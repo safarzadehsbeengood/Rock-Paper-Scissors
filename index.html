@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
+
     <script>
+
+let computerScore = 0;
+let playerScore = 0;
+
+let player
+
+
+
 function computerPlay() {
-    let handChoice = ['Rock', 'Paper', 'Scissors'];
+    let handChoice = ['rock', 'paper', 'scissors'];
     let chance = Math.floor((Math.random() * 3) + 1);
     if (chance == 1) {
         return handChoice[0];
@@ -20,12 +29,40 @@ function computerPlay() {
     }
 }
 
-console.log(computerPlay());
+function playRound(playerSelection, computerSelection) {
+    computerSelection = computerPlay();
+    playerSelection = prompt('Rock, Paper, or Scissors?', '');
 
-function roundPlay {
-    
+    if (makeAllLowerCase(playerSelection) == computerSelection) {
+        return `Tie! You both chose ${makeAllLowerCase(computerSelection)}!` 
+    } else if 
+((makeAllLowerCase(playerSelection) == 'paper' && computerSelection == 'rock') ||
+(makeAllLowerCase(playerSelection) == 'scissors' && computerSelection == 'paper') ||
+(makeAllLowerCase(playerSelection) == 'rock' && computerSelection == 'scissors')) {
+        return `Congrats, you win! ${makeFirstUpperCase(makeAllLowerCase(playerSelection))} beats ${computerSelection}!`;
+    } else {
+        return `Sorry, you lose! ${makeFirstUpperCase(computerSelection)} beats ${makeAllLowerCase(playerSelection)}!`
+    }
+
+    function makeFirstUpperCase(text) {
+       return text = text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function makeAllLowerCase(text) {
+        return text = text.toLowerCase();
+    }
 }
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+   console.log(playRound());
+} 
+}
+
+
+game();
+
     </script>
+
 </body>
 </html>
