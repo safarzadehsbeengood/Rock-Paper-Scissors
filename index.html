@@ -4,65 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-
-    <script>
-
-let computerScore = 0;
-let playerScore = 0;
-
-let player
-
-
-
-function computerPlay() {
-    let handChoice = ['rock', 'paper', 'scissors'];
-    let chance = Math.floor((Math.random() * 3) + 1);
-    if (chance == 1) {
-        return handChoice[0];
-    } else if (chance == 2) {
-        return handChoice[1];
-    } else if (chance == 3) {
-        return handChoice[2];
-    }
-}
-
-function playRound(playerSelection, computerSelection) {
-    computerSelection = computerPlay();
-    playerSelection = prompt('Rock, Paper, or Scissors?', '');
-
-    if (makeAllLowerCase(playerSelection) == computerSelection) {
-        return `Tie! You both chose ${makeAllLowerCase(computerSelection)}!` 
-    } else if 
-((makeAllLowerCase(playerSelection) == 'paper' && computerSelection == 'rock') ||
-(makeAllLowerCase(playerSelection) == 'scissors' && computerSelection == 'paper') ||
-(makeAllLowerCase(playerSelection) == 'rock' && computerSelection == 'scissors')) {
-        return `Congrats, you win! ${makeFirstUpperCase(makeAllLowerCase(playerSelection))} beats ${computerSelection}!`;
-    } else {
-        return `Sorry, you lose! ${makeFirstUpperCase(computerSelection)} beats ${makeAllLowerCase(playerSelection)}!`
-    }
-
-    function makeFirstUpperCase(text) {
-       return text = text.charAt(0).toUpperCase() + text.slice(1);
-    }
-
-    function makeAllLowerCase(text) {
-        return text = text.toLowerCase();
-    }
-}
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-   console.log(playRound());
-} 
-}
-
-
-game();
-
-    </script>
-
-</body>
+    <div class="score">
+      <h3 class="player-score">0</h3>
+      <h3>-</h3>
+      <h3 class="computer-score">0</h3>
+    </div>
+  <div class="container">
+    <div class="buttons">
+      <button class="rock">Rock</button>
+      <button class="paper">Paper</button>
+      <button class="scissors">Scissors</button>
+    </div>
+    
+    <div class="results">
+      Let's go!
+    </div>
+    
+    <button class="reset-button">Reset</button>
+  </div>
+  </body>  
 </html>
