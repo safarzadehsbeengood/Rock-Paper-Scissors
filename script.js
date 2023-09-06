@@ -75,17 +75,17 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
 
     if (makeAllLowerCase(playerSelection) == computerSelection) {
-        return `Tie! You both chose ${makeAllLowerCase(computerSelection)}!` 
+        return `🟰 Tie! You both chose ${makeAllLowerCase(computerSelection)}!` 
     } else if 
 ((makeAllLowerCase(playerSelection) == 'paper' && computerSelection == 'rock') ||
 (makeAllLowerCase(playerSelection) == 'scissors' && computerSelection == 'paper') ||
 (makeAllLowerCase(playerSelection) == 'rock' && computerSelection == 'scissors')) {
         playerScore++;
-  return `Congrats, you win! ${makeFirstUpperCase(makeAllLowerCase(playerSelection))} beats ${computerSelection}!`;
+  return `🎉 Congrats, you win! ${makeFirstUpperCase(makeAllLowerCase(playerSelection))} beats ${computerSelection}!`;
         
     } else {
         computerScore++;
-      return `Sorry, you lose! ${makeFirstUpperCase(computerSelection)} beats ${makeAllLowerCase(playerSelection)}!`;        
+      return `❌ Sorry, you lose! ${makeFirstUpperCase(computerSelection)} beats ${makeAllLowerCase(playerSelection)}!`;        
     }
 
     function makeFirstUpperCase(text) {
