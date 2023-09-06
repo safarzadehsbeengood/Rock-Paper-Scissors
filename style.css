@@ -5,6 +5,7 @@ button {
     font-family: 'Red Hat Mono', monospace;
     font-weight: bold;
     padding: 10px;
+    margin: 2px;
   }
   
   .score {
