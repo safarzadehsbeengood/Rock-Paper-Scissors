@@ -17,6 +17,8 @@ resetButton.addEventListener('click', () => {
   scorePlayer.textContent = playerScore;
   scoreComputer.textContent = computerScore;
   results.textContent = "Let's go!";
+  playerImg.src="";
+  computerImg.src="";
 })
 
 
