@@ -57,3 +57,8 @@ button {
     font-family: 'Red Hat Mono', monospace;
     padding-top: 250px;
   }
+
+  img {
+    max-width: 200px;
+    height: 200px
+  }
