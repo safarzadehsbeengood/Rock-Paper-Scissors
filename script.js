@@ -8,6 +8,8 @@ const container = document.querySelector('.container');
 const scorePlayer = document.querySelector('.player-score');
 const scoreComputer = document.querySelector('.computer-score');
 const resetButton = document.querySelector('.reset-button');
+var playerImg = document.getElementById("player-img");
+var computerImg = document.getElementById("computer-img");
 
 resetButton.addEventListener('click', () => {
   playerScore = 0;
@@ -20,10 +22,12 @@ resetButton.addEventListener('click', () => {
 
 
 const playerInputRock = document.querySelector('.rock');
+
 playerInputRock.addEventListener('click', () => {
     results.textContent = playRound('rock');
     scorePlayer.textContent = playerScore;
     scoreComputer.textContent = computerScore;
+    playerImg.src="imgs/rock.png";
 });
 
 const playerInputPaper = document.querySelector('.paper');
@@ -31,6 +35,7 @@ playerInputPaper.addEventListener('click', () => {
     results.textContent = playRound('paper');
     scorePlayer.textContent = playerScore;
     scoreComputer.textContent = computerScore;
+    playerImg.src="imgs/paper.png";
 });
 
 const playerInputScissors = document.querySelector('.scissors');
@@ -38,6 +43,7 @@ playerInputScissors.addEventListener('click', () => {
     results.textContent = playRound('scissors');
 scorePlayer.textContent = playerScore;
 scoreComputer.textContent = computerScore;
+playerImg.src="imgs/scissors.png";
   
 });
 
@@ -54,10 +60,13 @@ function computerPlay() {
     let handChoice = ['rock', 'paper', 'scissors'];
     let chance = Math.floor((Math.random() * 3) + 1);
     if (chance == 1) {
+        computerImg.src="imgs/rock.png";
         return handChoice[0];
     } else if (chance == 2) {
+        computerImg.src="imgs/paper.png";
         return handChoice[1];
     } else if (chance == 3) {
+        computerImg.src="imgs/scissors.png";
         return handChoice[2];
     }
 }
